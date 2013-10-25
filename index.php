@@ -4,16 +4,21 @@ include __dir__.'/controller/template.php';
 	
 class Page extends template
 {
-	public function __construct($function) {
-       parent::__construct();
-       var_dump($function);
-       
-       self::$function();
-   }
-	
-   public function test()
+	public function __construct($function)
 	{
-		echo "This is a test function"
+       self::$function();
+    }
+	
+    public function test()
+	{
+		parent::__construct();
+		echo "This is a test function";
+	}
+	
+	public function no()
+	{
+		
+		echo "No tempale";
 	}
 }
 
