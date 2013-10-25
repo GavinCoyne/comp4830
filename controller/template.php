@@ -3,7 +3,7 @@
 class template
 {
 	public function __construct() {
-       parent::__construct();
+       include "./view/template.php";
    }
 	
 }
