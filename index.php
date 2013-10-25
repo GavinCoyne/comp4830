@@ -9,16 +9,23 @@ class Page extends template
        self::$function();
     }
 	
-    public function test()
+    public function index()
 	{
-		parent::__construct();
-		echo "This is a test function";
+		$content = self::requireToVar(__dir__.'/view/index.php');
+		parent::__construct($content);
+
 	}
 	
 	public function no()
 	{
-		
 		echo "No tempale";
+	}
+	
+	public function requireToVar($file)
+	{
+		ob_start();
+		require $file;
+		return ob_get_clean();
 	}
 }
 
@@ -28,7 +35,15 @@ class Page extends template
 //Templating controller	
 	if(isset($_GET['action']))
 	{
+		
+		echo '<link rel="stylesheet" type="text/css" href="js/highlight.js/styles/monokai.css" />';
+		echo '<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>';
+		echo '<script src="js/highlight.js/highlight.pack.js"></script>';
+		
+		
 		echo '<link rel="stylesheet" type="text/css" href="css/index.css" />';
+		echo '<script src="js/system.js"></script>';
+		
 		$func = (isset($_GET["func"]) ? $_GET["func"] : null);
 		
 		//i.e. http://localhost/comp4830/?action=index&func=test

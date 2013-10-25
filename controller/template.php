@@ -2,8 +2,11 @@
 
 class template
 {
-	public function __construct() {
+	public $content;
+	
+	public function __construct($content = null) {
        include "./view/template.php";
+       
    }
 	
 }
