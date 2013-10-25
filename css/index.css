@@ -1,0 +1,71 @@
+body {
+	width: 40%;
+	margin-left: 25%;
+}
+
+p {
+	margin: 0 5%;
+	text-align: center;
+	font-size: 2.5em;
+}
+.overall {
+	border: 2px solid black;
+	padding: 5px;
+}
+.navigation {
+	list-style: none;
+	margin: 0 7.5%;
+	height: 26px;
+}
+
+.navigation li {
+	border: 2px solid black;
+	border-radius: 5px;
+	float: left;
+	margin:0 1.5%;
+	margin-top: 1px;
+	width: 150px;
+	text-align: center;
+}
+
+.navigation li a{
+	text-decoration: none;
+}
+
+.tutorial {
+	clear: both;
+	height: 500px;
+	border: 2px solid black;
+	border-radius: 10px;
+}
+
+.comp {
+	border-radius: 10px;
+	width: 100%;
+	height: 150px;
+}
+
+.button {
+	text-align: center;
+	width: 10%;
+	margin-left: 45%;
+}
+
+textarea {
+	margin-top: 1%;
+}
+
+.console
+{
+
+	border-radius: 10px;
+	width: 100%;
+	height: 150px;
+	background-color:black;
+	color:green;
+}
+
+pre
+{
+	margin:5px;
+}
