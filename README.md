@@ -2,4 +2,4 @@ comp4830
 ========
 
 
-Things and Stuff!
+Stuff and Things!
