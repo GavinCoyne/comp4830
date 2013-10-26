@@ -1,0 +1,3 @@
+ulimit -t (seconds)
+
+ulimit limits the duration of running of a process on the (linux) server running bash, specifically the next executable run
