@@ -1,12 +1,24 @@
-<?php
-$JAVA_HOME = "\"C:\Program Files (x86)\Java\jdk1.7.0_40\""; //Set your java path here
-$PATH = "%PATH%;$JAVA_HOME/bin";
-putenv("JAVA_HOME=$JAVA_HOME");
-putenv("PATH=$PATH");
-//$outputa = shell_exec('ulimit -t 30 2>&1'); //only works in linux env.
-$env = ".cmd" //This is for a windows environment
-//$env = ".sh" //This is for a linux environment
-echo "<pre>$outputa</pre>";
-$output = shell_exec('javac 2>&1'); //'2>&1' --> redirect stderr output to stdout which is currently being processed by shell_exec
-echo "<pre>$output</pre>";
-?>
+<html>
+	<head>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+	<body>
+		<script>
+			$.ajax({
+				url: "../compile.php",
+				type: "POST",
+				data: {
+					"className": "HelloWorld",
+					"code": "public class HelloWorld{\n\tpublic static void main(String args[]){\n\t\tSystem.out.println(\"Hello World!\");\n\t}\n}"
+				},			
+				dataType: "JSON",
+				error: function(err){
+					console.log(err.message);
+					}
+			}).done(function(data){
+				$("#code").html("Compile Data: <br />" + data.compile + "<br /><br />Execution Data: <br />" + data.execute);
+			});
+		</script>
+		<pre id="code"></pre>
+	</body>
+</html>
