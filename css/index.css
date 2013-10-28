@@ -72,5 +72,20 @@ color:red;
 
 pre
 {
+	
 	margin:5px;
+}
+.editor
+{
+	color:blue;
+	background-color:rgba(0,0,0,0);	
+	border:none;
+}
+
+.editor :focus
+{
+	color:blue;
+	background-color:rgba(0,0,0,0);	
+	border:none;
+}
 }

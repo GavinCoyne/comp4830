@@ -4,7 +4,7 @@ include __dir__.'/controller/template.php';
 	
 class Page extends template
 {
-	public function __construct($function)
+	public function __construct($function = "index")
 	{
        self::$function();
     }
@@ -33,7 +33,7 @@ class Page extends template
 	
 	
 //Templating controller	
-	if(isset($_GET['action']))
+	if(true)
 	{
 		
 		echo '<link rel="stylesheet" type="text/css" href="js/highlight.js/styles/monokai.css" />';
@@ -44,7 +44,7 @@ class Page extends template
 		echo '<link rel="stylesheet" type="text/css" href="css/index.css" />';
 		echo '<script src="js/system.js"></script>';
 		
-		$func = (isset($_GET["func"]) ? $_GET["func"] : null);
+		$func = (isset($_GET["func"]) ? $_GET["func"] : 'index');
 		
 		//i.e. http://localhost/comp4830/?action=index&func=test
 		$test = new page($func);
