@@ -13,7 +13,16 @@
 						<a href="#">Compiler Page</a>
 					</li>
 					<li>
-						<a href="#">Tutorials</a>
+						<a href="#">Basic Tutorials</a>
+					</li>
+					<li>
+						<a href="#">Advanced Tutorials</a>
+					</li>
+					<li>
+						<a href="#">Video Links</a>
+					</li>
+					<li>
+						<a href="#">Descriptive Animations</a>
 					</li>
 					<li>
 						<a href="#">Index Search</a>
