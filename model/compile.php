@@ -1,5 +1,7 @@
 <?php 
 
+require_once("envVars.php");
+
 if(isset($_POST['className'])){
 	$javaClass = $_POST['className'];
 }
@@ -8,14 +10,10 @@ if(isset($_POST['code'])){
 	$code = $_POST['code'];
 	
 	// Environment Variables //
-	$JAVA_HOME = "\"C:\Program Files (x86)\Java\jdk1.7.0_40\""; //Set your java path here
 	$PATH = "$JAVA_HOME/bin";
 
 	putenv("JAVA_HOME=$JAVA_HOME");
 	putenv("PATH=$PATH");
-
-	$env = ".cmd"; //This is for a windows environment
-	//$env = ".sh"; //This is for a linux environment
 
 	$file = __DIR__."/compscript$env"; //the script file we will use to compile java code (.cmd for windows, .sh for linux)
 	
@@ -24,8 +22,7 @@ if(isset($_POST['code'])){
 	if($env == ".sh"){
 		$data1 = "ulimit -t 30\n"; //set the upper time limit of the process to be run to 30 seconds (only workins in a linux environment)
 	} else {
-		$data1 = ""; //Just because I'm feeling silly, there is no limit to set in windows that will work...best to run this on a linux box.
-	}
+		set_time_limit(30); //Use the PHP script level timeout if we're running in windows
 
 	fwrite($handle, $data1); //write the ulimit statement to the file
 	//we need to parse the entered java code for the class name here
