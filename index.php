@@ -18,7 +18,7 @@ class Page extends template
 	
 	public function no()
 	{
-		echo "No tempale";
+		echo "No template";
 	}
 	
 	public function requireToVar($file)
